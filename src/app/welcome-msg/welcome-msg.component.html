@@ -1,4 +1,4 @@
-<!DOCKTYPE html>
+<!-- <!DOCKTYPE html>
 <html>
     <head>
         <base href=".">
@@ -10,7 +10,7 @@
         crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!--<link rel="stylesheet" href="scripts/font-awesome/css/font-awesome.min.css">-->
+        
     </head>
     <body>
         
@@ -18,4 +18,72 @@
        
       
     </body>
-</html>
+</html> -->
+
+<div>
+        <nav class='navbar navbar-default'>
+            <div class='container-fluid'>
+                
+            </div>
+        </nav>
+        <div class='container'>
+           
+        </div>
+    </div>
+      <h1>
+        {{title}}
+      </h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>내용</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>사용자</td>
+            <td>
+              <!--<input type="text" name="user-name" id="user-name" #nameInput (keyup)="onKeyUp(nameInput.value)" />-->
+              <button type="button" (click)="setName(nameInput.value) ">입력</button>
+            </td>
+          </tr>
+          <tr>
+            <td>실시간</td>
+            <td>
+              <input type="text" [(ngModel)]="userName" #realName />
+              <input type="text" [(ngModel)]="userAge" />
+              <button (click)="addUser()">유저추가</button>
+            </td>
+          </tr>
+          <tr>
+            <td>수  정</td>
+            <td>
+              <input type="test" [(ngModel)]="userNum" />
+              <button (click)="updateUser()">유저수정</button>
+            </td>
+          </tr>
+          <tr>
+              <td>삭  제</td>
+              <td>
+                <input type="text" [(ngModel)]="userNum" />
+                <button (click)="deleteUser()">유저삭제</button>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li *ngFor="let item of userNameList; let i = index">
+          {{i}} {{item}}
+        </li>
+      </ul>
+      
+      <h3><span id="display-name">[오리지널] {{userName}}님 환영합니다.</span></h3>
+      <h3><span id="display-name">{{welcomeMsg}}</span></h3>
+      <div class="contents">
+        <label for="usr-name">사용자이름:</label>
+        <input type="text" name="user-name" id="user-name" [(ngModel)]="userName" (ngModelChange)="onChange()">
+        <button type="button" (click)="showWelcomeMsg()">입력</button>
+      </div>
+
+      

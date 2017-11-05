@@ -13,6 +13,8 @@ import { HelloDirectiveDirective } from './hello-directive.directive';
 import { AccountListComponentComponent } from './account-list-component/account-list-component.component';
 import { AccountListComponent } from './account-list/account-list.component';
 import { WelcomeMsgComponent } from './welcome-msg/welcome-msg.component';
+import { LangSelectorComponent } from './lang-selector/lang-selector.component';
+import { I18nSupportService } from './i18n-support.service';
 
 const routing = RouterModule.forRoot([
   { path: 'account-list', component: AccountListComponent }
@@ -27,14 +29,15 @@ const routing = RouterModule.forRoot([
     HelloDirectiveDirective,
     AccountListComponentComponent,
     AccountListComponent,
-    WelcomeMsgComponent
+    WelcomeMsgComponent,
+    LangSelectorComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [I18nSupportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
